@@ -25,3 +25,6 @@ TestResult.xml
 
 # Visual Code
 .vscode/
+
+# Sqlite
+*.db
