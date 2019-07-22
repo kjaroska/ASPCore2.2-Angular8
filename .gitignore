@@ -22,3 +22,6 @@ bld/
 # NUNIT
 *.VisualState.xml
 TestResult.xml
+
+# Visual Code
+.vscode/
