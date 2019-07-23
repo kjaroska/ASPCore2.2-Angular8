@@ -49,7 +49,6 @@ Thumbs.db
 dist/
 node_modules/
 package-lock.json
-.angulardoc.json
 
 
 # Build results
