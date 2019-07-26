@@ -11,8 +11,11 @@
   <div *ngIf="registerMode" class="container">
     <div class="row justify-content-center">
       <div class="col-4">
-        <app-register></app-register>
+        <!-- PASSING VALUES TO CHILD COMPONENTS -->
+        <app-register [valuesFromHome]="values"></app-register>
       </div>
     </div>
   </div>
 </div>
+
+<p *ngFor="let value of values">Value: {{value.name}}</p>

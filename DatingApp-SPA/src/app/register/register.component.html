@@ -10,6 +10,13 @@
     <input type="password" class="form-control" required name="password" [(ngModel)]="model.password"  placeholder="Password">
   </div>
 
+  <div class="form-group">
+    <label for="favoriteValue">Fav value?</label>
+    <select class="form-control" id="favoriteValue">
+      <option *ngFor="let value of valuesFromHome" [value]="value">{{value.name}}</option>
+    </select>
+  </div>
+
   <div class="form-group text-center">
     <button class="btn btn-success" type="submit" (click)="register()">Register</button>
     <button class="btn btn-default" type="button" (click)="cancel()">Cancel</button>
