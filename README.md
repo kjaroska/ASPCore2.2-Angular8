@@ -30,4 +30,15 @@ TBD
 ```
 
 ## Other References
-List used VisualStudio Code Extensions
+``` Visual Studio Code Extensions ```
+* Angular v6 Snippets
+* Angular Files (creating files)
+* Angular Language Service (definitions)
+* Angular2-Switcher (switching between files - .ts/.html etc.)
+* Auto Rename Tag
+* Bracket Pair Colorizer (visual aid for navigating brackets)
+* Debugger for Chrome
+* Material Icon Theme (visual icon redesign)
+* Path Intellisense (autocompletion, sense)
+* Prettier - Code Formatter
+* TSLint (helps with the syntax)
