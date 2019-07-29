@@ -23,7 +23,7 @@ import { ErrorInterceptorProvider } from './_services/error.interceptor';
       BrowserModule,
       HttpClientModule,
       FormsModule,
-      BsDropdownModule
+      BsDropdownModule.forRoot()
    ],
    providers: [
       AuthService,
