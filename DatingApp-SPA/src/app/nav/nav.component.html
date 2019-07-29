@@ -19,7 +19,7 @@
     <!-- * structural directive, will remove the div if not met -->
     <div *ngIf="loggedIn()" class="dropdown">
       <button class="btn btn-secondary dropdown-toggle" type="button">
-        Welcome User
+        Welcome {{authService.decodedToken?.unique_name | titlecase}}
       </button>
 
       <div class="dropdown-menu">
