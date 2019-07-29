@@ -40,6 +40,7 @@ TBD
 * [AlertifyJS](https://alertifyjs.com/)
 * [Auth-Angular-JWT](https://github.com/auth0/angular2-jwt)
 * [NGX-Bootstrap](https://valor-software.com/ngx-bootstrap)
+* [Bootswatch](https://bootswatch.com/)
 
 
 ``` Visual Studio Code Extensions ```
