@@ -10,10 +10,10 @@
 
 
 ## Technologies
-* [Angular8+](https://angular.io/)
+* [Angular 8+](https://angular.io/)
 * [.NET Core 2.2](https://dotnet.microsoft.com/)
 * [TypeScript](https://www.typescriptlang.org/)
-* [SCSS](https://sass-lang.com/)
+* [SASS](https://sass-lang.com/)
 * [EntityFrameworkCore.Sqlite 2.2.6](https://docs.microsoft.com/en-us/ef/core/providers/sqlite/)
 
 
@@ -38,6 +38,7 @@ TBD
 ## Other References
 ``` 3rd Party Libraries ```
 * [AlertifyJS](https://alertifyjs.com/)
+* [Auth-Angular-JWT](https://github.com/auth0/angular2-jwt)
 
 
 ``` Visual Studio Code Extensions ```
