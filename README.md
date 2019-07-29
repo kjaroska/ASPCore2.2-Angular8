@@ -19,7 +19,13 @@
 
 ## Setup
 ### Build & Installation
-TBD
+```
+EF migration: dotnet ef migrations add Initial
+EF update: dotnet ef database update
+
+API project: ___dotnet watch run___
+SPA project: ___ng serve___
+```
 
 ## Status
 This project is a __Proof of Concept__ realised as self-development and curiosty.
