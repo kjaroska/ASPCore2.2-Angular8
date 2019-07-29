@@ -36,6 +36,10 @@ TBD
 ```
 
 ## Other References
+``` 3rd Party Libraries ```
+* [AlertifyJS](https://alertifyjs.com/)
+
+
 ``` Visual Studio Code Extensions ```
 * Angular v6 Snippets
 * Angular Files (creating files)
