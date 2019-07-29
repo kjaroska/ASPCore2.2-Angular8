@@ -1,3 +1,4 @@
+import { AuthService } from './../_services/auth.service';
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 
 @Component({
@@ -12,12 +13,18 @@ export class RegisterComponent implements OnInit {
   model: any = {};
 
 
-  constructor() { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit() {
   }
 
   register() {
+    this.authService.register(this.model).subscribe(() => {
+      console.log("Registration Successful")
+    }, error => {
+      console.log(error);
+    });
+
     console.log(this.model);
   }
 
