@@ -1,5 +1,6 @@
 ﻿using System.Net;
 using System.Text;
+using DatingApp.API.Helpers;
 using DatingApp.API.Persistance;
 using DatingApp.API.Persistance.Repositories;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -61,6 +62,7 @@ namespace DatingApp.API
 
                         var error = context.Features.Get<IExceptionHandlerFeature>();
                         if (error != null) {
+                            context.Response.AddApplicationError(error.Error.Message);
                             await context.Response.WriteAsync(error.Error.Message);
                         }
                     });
