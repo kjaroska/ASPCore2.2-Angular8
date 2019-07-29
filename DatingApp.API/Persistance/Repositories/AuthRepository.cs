@@ -15,6 +15,8 @@ namespace DatingApp.API.Persistance.Repositories
 
         public async Task<User> Login(string username, string password)
         {
+
+            throw new System.Exception("aaa");
             var user = await _context.Users.FirstOrDefaultAsync(x => x.Username == username);
             if (user == null) {
                 return null; // Return Unauthorized in controller
