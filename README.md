@@ -39,6 +39,7 @@ TBD
 ``` 3rd Party Libraries ```
 * [AlertifyJS](https://alertifyjs.com/)
 * [Auth-Angular-JWT](https://github.com/auth0/angular2-jwt)
+* [NGX-Bootstrap](https://valor-software.com/ngx-bootstrap)
 
 
 ``` Visual Studio Code Extensions ```
