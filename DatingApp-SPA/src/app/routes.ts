@@ -5,11 +5,17 @@ import { HomeComponent } from "./home/home.component";
 import { Routes } from "@angular/router";
 import { ListsComponent } from './lists/lists.component';
 
-export const appRoutes: Routes = [
+export const appRoutes: Routes = [ // Sequence is important!
   { path: "home", component: HomeComponent },
-  { path: "members", component: MemberListComponent, canActivate: [AuthGuard] },
-  { path: "messages", component: MessagesComponent },
-  { path: "lists", component: ListsComponent },
+  {
+    path: "", runGuardsAndResolvers: "always", canActivate: [AuthGuard],
+    children: [
+      { path: "members", component: MemberListComponent},
+      { path: "messages", component: MessagesComponent },
+      { path: "lists", component: ListsComponent },
+    ]
+  },
+
   { path: "home", component: HomeComponent },
   { path: "**", redirectTo: "home", pathMatch: "full" }
 ];
