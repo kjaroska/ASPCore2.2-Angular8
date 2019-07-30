@@ -8,6 +8,7 @@ import { Router } from "@angular/router";
   templateUrl: "./nav.component.html",
   styleUrls: ["./nav.component.css"]
 })
+
 export class NavComponent implements OnInit {
   model: any = {};
 
@@ -20,14 +21,11 @@ export class NavComponent implements OnInit {
   ngOnInit() {}
 
   login() {
-    this.authService.login(this.model).subscribe(
-      next => {
+    this.authService.login(this.model).subscribe(() => {
         this.alertify.success("Logged Successfuly");
-      },
-      error => {
+      }, error => {
         this.alertify.error(error);
-      },
-      () => {
+      }, () => {
         this.router.navigate(["/members"]);
       }
     );
@@ -40,6 +38,6 @@ export class NavComponent implements OnInit {
   logOut() {
     localStorage.removeItem("token");
     this.alertify.message("Logged Out");
-    this.router.navigate(["home"]);
+    this.router.navigate(["/home"]);
   }
 }
