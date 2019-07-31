@@ -18,6 +18,7 @@ import { MemberListComponent } from "./Members/member-list/member-list.component
 import { ListsComponent } from "./lists/lists.component";
 import { MessagesComponent } from "./messages/messages.component";
 import { RouterModule } from "@angular/router";
+import { MemberCardComponent } from './Members/member-card/member-card.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { RouterModule } from "@angular/router";
     RegisterComponent,
     MemberListComponent,
     ListsComponent,
-    MessagesComponent
+    MessagesComponent,
+    MemberCardComponent
   ],
   imports: [
     BrowserModule,
