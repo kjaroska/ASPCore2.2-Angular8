@@ -20,8 +20,6 @@ export class MemberListComponent implements OnInit {
   loadUsers() {
     this.userService.getUsers().subscribe((users: User[]) => {
       this.users = users;
-      console.log(users);
-      this.alertify.message(users[0].id.toString());
     }, error => {
       this.alertify.error(error);
     });
