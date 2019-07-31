@@ -41,6 +41,7 @@ TBD
 * [Auth-Angular-JWT](https://github.com/auth0/angular2-jwt)
 * [NGX-Bootstrap](https://valor-software.com/ngx-bootstrap)
 * [Bootswatch](https://bootswatch.com/)
+* [AutoMapper](http://docs.automapper.org/en/stable/Dependency-injection.html)
 
 
 ``` Visual Studio Code Extensions ```
