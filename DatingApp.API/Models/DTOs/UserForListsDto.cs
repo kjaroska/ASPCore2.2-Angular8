@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 
 namespace DatingApp.API.Models.DTOs
 {
@@ -18,6 +17,6 @@ namespace DatingApp.API.Models.DTOs
         public string City { get; set; }
         public string Country { get; set; }
         public string PhotoUrl { get; set; }
-        
+
     }
 }
