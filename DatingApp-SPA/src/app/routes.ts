@@ -1,3 +1,4 @@
+import { MemberDetailComponent } from './Members/member-detail/member-detail.component';
 import { AuthGuard } from './_guards/auth.guard';
 import { MessagesComponent } from "./messages/messages.component";
 import { MemberListComponent } from "./Members/member-list/member-list.component";
@@ -11,6 +12,7 @@ export const appRoutes: Routes = [ // Sequence is important!
     path: "", runGuardsAndResolvers: "always", canActivate: [AuthGuard],
     children: [
       { path: "members", component: MemberListComponent },
+      { path: "members/:id", component: MemberDetailComponent }, // route parameter
       { path: "messages", component: MessagesComponent },
       { path: "lists", component: ListsComponent },
     ]

@@ -20,6 +20,7 @@ import { ListsComponent } from "./lists/lists.component";
 import { MessagesComponent } from "./messages/messages.component";
 import { RouterModule } from "@angular/router";
 import { MemberCardComponent } from './Members/member-card/member-card.component';
+import { MemberDetailComponent } from './Members/member-detail/member-detail.component';
 
 
 export function tokenGetter() {
@@ -35,7 +36,8 @@ export function tokenGetter() {
     MemberListComponent,
     ListsComponent,
     MessagesComponent,
-    MemberCardComponent
+    MemberCardComponent,
+    MemberDetailComponent
   ],
   imports: [
     BrowserModule,
