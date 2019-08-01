@@ -1,4 +1,5 @@
-import { MemberDetailResolver } from './_resolvers/member-detail.resolver';
+import { MemberListResolver } from "./_resolvers/member-list.resolver";
+import { MemberDetailResolver } from "./_resolvers/member-detail.resolver";
 import { UserService } from "./_services/user.service";
 import { AuthGuard } from "./_guards/auth.guard";
 import { appRoutes } from "./routes";
@@ -9,7 +10,7 @@ import { NgModule } from "@angular/core";
 import { HttpClientModule } from "@angular/common/http";
 import { FormsModule } from "@angular/forms";
 import { BsDropdownModule, TabsModule } from "ngx-bootstrap";
-import { JwtModule } from '@auth0/angular-jwt';
+import { JwtModule } from "@auth0/angular-jwt";
 
 import { AppComponent } from "./app.component";
 import { NavComponent } from "./nav/nav.component";
@@ -20,9 +21,8 @@ import { MemberListComponent } from "./Members/member-list/member-list.component
 import { ListsComponent } from "./lists/lists.component";
 import { MessagesComponent } from "./messages/messages.component";
 import { RouterModule } from "@angular/router";
-import { MemberCardComponent } from './Members/member-card/member-card.component';
-import { MemberDetailComponent } from './Members/member-detail/member-detail.component';
-
+import { MemberCardComponent } from "./Members/member-card/member-card.component";
+import { MemberDetailComponent } from "./Members/member-detail/member-detail.component";
 
 export function tokenGetter() {
   return localStorage.getItem("token");
@@ -61,7 +61,8 @@ export function tokenGetter() {
     AlertifyService,
     AuthGuard,
     UserService,
-    MemberDetailResolver
+    MemberDetailResolver,
+    MemberListResolver
   ],
   bootstrap: [AppComponent]
 })

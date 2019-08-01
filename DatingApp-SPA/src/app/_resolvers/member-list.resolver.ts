@@ -7,19 +7,19 @@ import { Resolve, Router, ActivatedRouteSnapshot } from "@angular/router";
 import { catchError } from "rxjs/operators";
 
 @Injectable()
-export class MemberDetailResolver implements Resolve<User> {
+export class MemberListResolver implements Resolve<User[]> {
   constructor(
     private userService: UserService,
     private router: Router,
     private alertify: AlertifyService
   ) {}
 
-  resolve(route: ActivatedRouteSnapshot): Observable<User> {
-    return this.userService.getUser(route.params["id"]).pipe(
+  resolve(route: ActivatedRouteSnapshot): Observable<User[]> {
+    return this.userService.getUsers().pipe(
       catchError(error => {
         this.alertify.error("Problem retriving data");
-        this.router.navigate(["/members"]);
-        return of<User>();
+        this.router.navigate(["/home"]);
+        return of<User[]>();
       })
     );
   }
