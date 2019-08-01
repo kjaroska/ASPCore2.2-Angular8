@@ -1,3 +1,4 @@
+import { MemberDetailResolver } from './_resolvers/member-detail.resolver';
 import { UserService } from "./_services/user.service";
 import { AuthGuard } from "./_guards/auth.guard";
 import { appRoutes } from "./routes";
@@ -59,7 +60,8 @@ export function tokenGetter() {
     ErrorInterceptorProvider,
     AlertifyService,
     AuthGuard,
-    UserService
+    UserService,
+    MemberDetailResolver
   ],
   bootstrap: [AppComponent]
 })
