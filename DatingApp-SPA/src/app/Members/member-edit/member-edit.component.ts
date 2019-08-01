@@ -1,6 +1,6 @@
 import { AlertifyService } from './../../_services/alertify.service';
 import { ActivatedRoute } from "@angular/router";
-import { Component, OnInit, ViewChild } from "@angular/core";
+import { Component, OnInit, ViewChild, HostListener } from "@angular/core";
 import { User } from "src/app/_models/user";
 import { NgForm } from '@angular/forms';
 
@@ -11,6 +11,7 @@ import { NgForm } from '@angular/forms';
 })
 export class MemberEditComponent implements OnInit {
   @ViewChild("editForm",{ static: false }) editForm: NgForm;
+
   user: User;
 
   constructor(private route: ActivatedRoute, private alertify: AlertifyService) {}
