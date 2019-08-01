@@ -40,6 +40,7 @@ TBD
 * [AlertifyJS](https://alertifyjs.com/)
 * [Auth-Angular-JWT](https://github.com/auth0/angular2-jwt)
 * [NGX-Bootstrap](https://valor-software.com/ngx-bootstrap)
+* [NGX-Gallery](https://www.npmjs.com/package/ngx-gallery)
 * [Bootswatch](https://bootswatch.com/)
 * [AutoMapper](http://docs.automapper.org/en/stable/Dependency-injection.html)
 
