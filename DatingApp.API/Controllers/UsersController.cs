@@ -42,7 +42,7 @@ namespace DatingApp.API.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateUser(int id, UserForUpdateDto userForUpdate)
+        public async Task<IActionResult> UpdateUser(int id, [FromBody] UserForUpdateDto userForUpdate)
         {
             if (id != int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value))
                 return Unauthorized();
