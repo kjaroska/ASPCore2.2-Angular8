@@ -41,5 +41,11 @@ namespace DatingApp.API.Persistance.Repositories
         {
             return await _context.SaveChangesAsync() > 0; // If more than 0 changes saved, then return true
         }
+
+        public async Task<Photo> GetPhoto(int id)
+        {
+            var photo = await _context.Photos.FirstOrDefaultAsync(p => p.Id == id);
+            return photo;
+        }
     }
 }
