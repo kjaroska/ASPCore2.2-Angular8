@@ -27,6 +27,7 @@ import { MessagesComponent } from "./messages/messages.component";
 import { RouterModule } from "@angular/router";
 import { MemberCardComponent } from "./Members/member-card/member-card.component";
 import { MemberDetailComponent } from "./Members/member-detail/member-detail.component";
+import { PhotoEditorComponent } from './Members/photo-editor/photo-editor.component';
 
 export function tokenGetter() {
   return localStorage.getItem("token");
@@ -43,7 +44,8 @@ export function tokenGetter() {
     MessagesComponent,
     MemberCardComponent,
     MemberDetailComponent,
-    MemberEditComponent
+    MemberEditComponent,
+    PhotoEditorComponent
   ],
   imports: [
     BrowserModule,
