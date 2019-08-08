@@ -62,3 +62,4 @@ TBD
 
 ``Miscellaneous``
 https://www.json-generator.com/
+https://caniuse.com/
