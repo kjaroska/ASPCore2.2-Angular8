@@ -21,7 +21,6 @@ export class UserService {
   }
 
   updateUser(id: number, user: User) {
-    console.log(user);
     return this.http.put(this.baseUrl + "users/" + id, user);
   }
 
