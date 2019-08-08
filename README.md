@@ -58,3 +58,7 @@ TBD
 * Path Intellisense (autocompletion, sense)
 * Prettier - Code Formatter
 * TSLint (helps with the syntax)
+
+
+``Miscellaneous``
+https://www.json-generator.com/
