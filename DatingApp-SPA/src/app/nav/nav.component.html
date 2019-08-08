@@ -26,9 +26,12 @@
 
     <!-- * structural directive, will remove the div if not met -->
     <div *ngIf="loggedIn()" class="dropdown" dropdown>
-      <button class="btn btn-secondary dropdown-toggle" dropdownToggle>
+      <span class="mr-1">
+        <img src="{{authService.currentUser.photoUrl}}" alt="">
+      </span>
+      <a class="dropdown-toggle" dropdownToggle>
         Welcome {{ authService.decodedToken?.unique_name | titlecase }}
-      </button>
+      </a>
 
       <div class="dropdown-menu mt-3" *dropdownMenu>
         <a class="dropdown-item" [routerLink]="['/member/edit']"
