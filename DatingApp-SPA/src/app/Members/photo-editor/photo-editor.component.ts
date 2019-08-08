@@ -20,6 +20,7 @@ export class PhotoEditorComponent implements OnInit {
   baseUrl = environment.apiUrl;
   currentMain: Photo;
 
+
   constructor(private authService: AuthService, private userService: UserService, private alertify: AlertifyService) { }
 
   ngOnInit() {
@@ -64,7 +65,11 @@ export class PhotoEditorComponent implements OnInit {
       this.currentMain.isMain = false;
       photo.isMain = true;
 
-      this.getMemberPhotoChange.emit(photo.url); // Step 2, emit
+      // this.getMemberPhotoChange.emit(photo.url); // Step 2, emit
+      this.authService.changeMemberPhoto(photo.url);
+      this.authService.currentUser.photoUrl = photo.url;
+      localStorage.setItem("user", JSON.stringify(this.authService.currentUser));
+
       this.alertify.success("Photo set as main");
     }, error => {
       this.alertify.error(error);
