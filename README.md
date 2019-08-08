@@ -41,6 +41,7 @@ TBD
 * [Auth-Angular-JWT](https://github.com/auth0/angular2-jwt)
 * [NGX-Bootstrap](https://valor-software.com/ngx-bootstrap)
 * [NGX-Gallery](https://www.npmjs.com/package/ngx-gallery)
+* [NG2-File-Upload](https://github.com/valor-software/ng2-file-upload)
 * [Bootswatch](https://bootswatch.com/)
 * [AutoMapper](http://docs.automapper.org/en/stable/Dependency-injection.html)
 
