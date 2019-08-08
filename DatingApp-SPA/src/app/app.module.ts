@@ -11,7 +11,7 @@ import { AuthService } from "./_services/auth.service";
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { HttpClientModule } from "@angular/common/http";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { BsDropdownModule, TabsModule } from "ngx-bootstrap";
 import { NgxGalleryModule } from 'ngx-gallery';
 import { JwtModule } from "@auth0/angular-jwt";
@@ -52,6 +52,7 @@ export function tokenGetter() {
     BrowserModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     BsDropdownModule.forRoot(),
     TabsModule.forRoot(),
     NgxGalleryModule,
