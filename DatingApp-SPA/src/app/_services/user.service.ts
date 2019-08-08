@@ -16,15 +16,20 @@ export class UserService {
     return this.http.get<User[]>(this.baseUrl + "users"); // specify for get() what is expected in return
   }
 
-  getUser(id): Observable<User> {
-    return this.http.get<User>(this.baseUrl + "users/" + id);
+  getUser(userId): Observable<User> {
+    return this.http.get<User>(this.baseUrl + "users/" + userId);
   }
 
-  updateUser(id: number, user: User) {
-    return this.http.put(this.baseUrl + "users/" + id, user);
+  updateUser(userId: number, user: User) {
+    return this.http.put(this.baseUrl + "users/" + userId, user);
   }
 
   setMainPhoto(userId: number, photoId: number) {
     return this.http.post(this.baseUrl + "users/" + userId + "/photos/" + photoId + "/setMain", {})
+  }
+
+  deletePhoto(userId: number, photoId: number) {
+    debugger
+    return this.http.delete(this.baseUrl + "users/" + userId + "/photos/" + photoId);
   }
 }
