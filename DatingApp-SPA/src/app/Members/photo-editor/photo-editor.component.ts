@@ -24,21 +24,22 @@ export class PhotoEditorComponent implements OnInit {
   constructor(private authService: AuthService, private userService: UserService, private alertify: AlertifyService) { }
 
   ngOnInit() {
-    this.initUploader();
+    this.initializeUploader();
   }
 
   fileOverBase(e: any): void {
     this.hasBaseDropZoneOver = e;
   }
 
-  initUploader() {
+  initializeUploader() {
     this.uploader = new FileUploader({
       url: this.baseUrl + "users/" + this.authService.decodedToken.nameid + "/photos",
       authToken: "Bearer " + localStorage.getItem("token"),
       isHTML5: true,
       allowedFileType: ["image"],
       removeAfterUpload: true,
-      autoUpload: false
+      autoUpload: false,
+      maxFileSize: 10 * 1024 * 1024
     });
 
     this.uploader.onAfterAddingFile = (file) => { file.withCredentials = false; };
@@ -60,12 +61,12 @@ export class PhotoEditorComponent implements OnInit {
   }
 
   setMainPhoto(photo: Photo) {
+    debugger
     this.userService.setMainPhoto(this.authService.decodedToken.nameid, photo.id).subscribe(() => {
       this.currentMain = this.photos.filter(p => p.isMain == true)[0]; // Filter returns copy of array that meets the prerequisite
       this.currentMain.isMain = false;
       photo.isMain = true;
 
-      // this.getMemberPhotoChange.emit(photo.url); // Step 2, emit
       this.authService.changeMemberPhoto(photo.url);
       this.authService.currentUser.photoUrl = photo.url;
       localStorage.setItem("user", JSON.stringify(this.authService.currentUser));
