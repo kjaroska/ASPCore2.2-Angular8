@@ -35,7 +35,6 @@ export class AuthService {
             this.decodedToken = this.jwtHelper.decodeToken(user.token);
             this.currentUser = user.user;
             this.changeMemberPhoto(this.currentUser.photoUrl);
-            console.log(this.decodedToken);
           }
         })
       )

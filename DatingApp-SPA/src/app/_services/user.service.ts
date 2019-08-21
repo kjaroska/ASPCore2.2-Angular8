@@ -29,7 +29,6 @@ export class UserService {
   }
 
   deletePhoto(userId: number, photoId: number) {
-    debugger
     return this.http.delete(this.baseUrl + "users/" + userId + "/photos/" + photoId);
   }
 }
