@@ -48,6 +48,7 @@
     <form
       *ngIf="!loggedIn()"
       #loginForm="ngForm"
+      id="loginForm"
       class="form-inline my-2 my-lg-0"
       (ngSubmit)="login()"
     >
