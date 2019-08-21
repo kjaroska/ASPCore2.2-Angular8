@@ -44,6 +44,7 @@ TBD
 * [NG2-File-Upload](https://github.com/valor-software/ng2-file-upload)
 * [Bootswatch](https://bootswatch.com/)
 * [AutoMapper](http://docs.automapper.org/en/stable/Dependency-injection.html)
+* [TimeAgoPipe](https://www.npmjs.com/package/time-ago-pipe)
 
 
 ``` Visual Studio Code Extensions ```
