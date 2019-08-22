@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -7,55 +8,62 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DatingApp.API.Persistance.Repositories
 {
-  public class DatingRepository : IDatingRepository
-  {
-    public DataContext _context { get; set; }
-
-
-    public DatingRepository(DataContext context)
+    public class DatingRepository : IDatingRepository
     {
-      this._context = context;
-    }
+        public DataContext _context { get; set; }
 
-    public void Add<T>(T entity) where T : class // Do not have to be async, for this only adds entity to memory, not DB per se.
-    {
-      _context.Add(entity);
-    }
 
-    public void Delete<T>(T entity) where T : class
-    {
-      _context.Remove(entity);
-    }
+        public DatingRepository(DataContext context)
+        {
+            this._context = context;
+        }
 
-    public async Task<User> GetUser(int id)
-    {
-      var user = await _context.Users.Include(p => p.Photos).FirstOrDefaultAsync(u => u.Id == id);
-      return user;
-    }
+        public void Add<T>(T entity) where T : class // Do not have to be async, for this only adds entity to memory, not DB per se.
+        {
+            _context.Add(entity);
+        }
 
-    public async Task<PagedList<User>> GetUsers(UserParams userParams)
-    {
-      var users = _context.Users.Include(p => p.Photos).AsQueryable(); // Queryable to use Where()
-      users = users.Where(u => u.Id != userParams.UserId);
-      users = users.Where(u => u.Gender == userParams.Gender);
-      
-      return await PagedList<User>.CreateAsync(users, userParams.pageNumber, userParams.pageSize);
-    }
+        public void Delete<T>(T entity) where T : class
+        {
+            _context.Remove(entity);
+        }
 
-    public async Task<bool> SaveAll()
-    {
-      return await _context.SaveChangesAsync() > 0; // If more than 0 changes saved, then return true
-    }
+        public async Task<User> GetUser(int id)
+        {
+            var user = await _context.Users.Include(p => p.Photos).FirstOrDefaultAsync(u => u.Id == id);
+            return user;
+        }
 
-    public async Task<Photo> GetPhoto(int id)
-    {
-      var photo = await _context.Photos.FirstOrDefaultAsync(p => p.Id == id);
-      return photo;
-    }
+        public async Task<PagedList<User>> GetUsers(UserParams userParams)
+        {
+            var users = _context.Users.Include(p => p.Photos).AsQueryable(); // Queryable to use Where()
+            users = users.Where(u => u.Id != userParams.UserId);
+            users = users.Where(u => u.Gender == userParams.Gender);
+            if (userParams.MinAge != 18 || userParams.MaxAge != 99)
+            {
+              var minDob = DateTime.Today.AddYears(-userParams.MaxAge - 1); // dob - date of birth
+              var maxDob = DateTime.Today.AddYears(-userParams.MinAge);
 
-    public async Task<Photo> GetMainPhotoForUser(int userId)
-    {
-      return await _context.Photos.Where(u => u.UserId == userId).FirstOrDefaultAsync(p => p.IsMain);
+              users = users.Where(u => u.DateOfBirth >= minDob && u.DateOfBirth <= maxDob);
+            }
+
+            return await PagedList<User>.CreateAsync(users, userParams.pageNumber, userParams.pageSize);
+        }
+
+        public async Task<bool> SaveAll()
+        {
+            return await _context.SaveChangesAsync() > 0; // If more than 0 changes saved, then return true
+        }
+
+        public async Task<Photo> GetPhoto(int id)
+        {
+            var photo = await _context.Photos.FirstOrDefaultAsync(p => p.Id == id);
+            return photo;
+        }
+
+        public async Task<Photo> GetMainPhotoForUser(int userId)
+        {
+            return await _context.Photos.Where(u => u.UserId == userId).FirstOrDefaultAsync(p => p.IsMain);
+        }
     }
-  }
 }
