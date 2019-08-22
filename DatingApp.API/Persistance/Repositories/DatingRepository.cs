@@ -35,7 +35,10 @@ namespace DatingApp.API.Persistance.Repositories
 
     public async Task<PagedList<User>> GetUsers(UserParams userParams)
     {
-      var users = _context.Users.Include(p => p.Photos);
+      var users = _context.Users.Include(p => p.Photos).AsQueryable(); // Queryable to use Where()
+      users = users.Where(u => u.Id != userParams.UserId);
+      users = users.Where(u => u.Gender == userParams.Gender);
+      
       return await PagedList<User>.CreateAsync(users, userParams.pageNumber, userParams.pageSize);
     }
 
